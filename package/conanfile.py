@@ -12,6 +12,12 @@ class PckConan(ConanFile):
     default_options = "shared=False"
     generators = "cmake"
 
+    scm = {
+        "type": "git",
+        "url": "auto",
+        "revision": "auto"
+     }
+
     def source(self):
         self.run("git clone https://github.com/memsharded/hello.git")
         self.run("cd hello && git checkout static_shared")
